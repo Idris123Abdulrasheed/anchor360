@@ -1,5 +1,5 @@
-'use client' // yo appear on the hompage and not backend
-import { supabase } from './lib/supabase' //supabase is basically providing me BAAS bakeed as a service
+'use client'
+import { supabase } from './lib/supabase'
 
 export default function Home() {
   const handleGoogleLogin = async () => {
@@ -12,58 +12,69 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-6">
+    <main className="min-h-screen bg-[#f8f4f0] flex items-center justify-center relative overflow-hidden">
+      
+      {/* Rich Marble Background */}
+      <div className="absolute inset-0 bg-[radial-gradient(#d4c4a8_0.8px,transparent_1px)] bg-[length:40px_40px] opacity-40"></div>
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1582564280000-5e2c2e5f5f5f')] bg-cover bg-center mix-blend-overlay opacity-30"></div>
 
-      {/* LOGO AREA */}
-      <div className="flex flex-col items-center mb-10">
-        <div className="w-24 h-24 rounded-full bg-[#C9A84C] flex items-center justify-center mb-6 shadow-lg">
-          <span className="text-5xl">⚓</span>
+      <div className="relative z-10 w-full max-w-md mx-auto px-6 py-12">
+        
+        {/* Top Logo */}
+        <div className="flex justify-between items-center mb-8">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 bg-gradient-to-br from-amber-700 to-amber-900 rounded-full flex items-center justify-center">
+              <span className="text-white text-2xl">⚓</span>
+            </div>
+            <span className="font-bold text-2xl text-gray-900">Anchor 360</span>
+          </div>
+          <span className="text-sm font-medium text-gray-600">Login</span>
         </div>
-        <h1 className="text-5xl font-black text-gray-900 tracking-wider">
-          ANCHOR
-        </h1>
-        <h1 className="text-5xl font-black text-[#C9A84C] tracking-wider">
-          360
-        </h1>
-        <p className="text-gray-400 text-sm tracking-widest uppercase mt-3">
-          The Student Operating System
+
+        {/* Main Premium Card */}
+        <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl p-10 border border-amber-100">
+          
+          {/* Large Anchor */}
+          <div className="mx-auto w-28 h-28 bg-gradient-to-br from-amber-700 via-amber-800 to-amber-900 rounded-full flex items-center justify-center mb-8 shadow-inner ring-8 ring-amber-100">
+            <span className="text-7xl drop-shadow-md">⚓</span>
+          </div>
+
+          <h1 className="text-4xl font-bold text-center text-gray-900 mb-1 tracking-tight">
+            Anchor 360
+          </h1>
+          <p className="text-center text-amber-800 font-medium tracking-[3px] text-sm mb-8">
+            THE STUDENT OPERATING SYSTEM
+          </p>
+
+          <p className="text-center text-gray-700 text-[17px] leading-relaxed mb-10">
+            The best place to instantly connect to the right people, opportunities and solutions.
+          </p>
+
+          {/* Google Button */}
+          <button
+            onClick={handleGoogleLogin}
+            className="w-full bg-white border border-gray-300 hover:border-gray-400 active:scale-[0.985] transition-all duration-200 py-4 px-6 rounded-2xl flex items-center justify-center gap-3 text-lg font-medium text-gray-800 shadow-sm hover:shadow"
+          >
+            <img 
+              src="https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png" 
+              alt="Google" 
+              className="w-6 h-6"
+            />
+            <span>Continue with Google</span>
+          </button>
+        </div>
+
+        {/* Footer */}
+        <div className="flex justify-center gap-6 text-xs text-gray-500 mt-10">
+          <a href="#" className="hover:text-gray-700 transition-colors">Terms</a>
+          <a href="#" className="hover:text-gray-700 transition-colors">Privacy</a>
+          <a href="#" className="hover:text-gray-700 transition-colors">Contact</a>
+        </div>
+
+        <p className="text-center text-[10px] text-gray-400 mt-8 tracking-widest">
+          CONNECT • SOLVE • RISE
         </p>
       </div>
-
-      {/* DIVIDER */}
-      <div className="w-16 h-1 bg-[#C9A84C] mb-10 rounded"/>
-
-      {/* TAGLINE */}
-      <p className="text-gray-500 text-center text-base max-w-xs mb-12 leading-relaxed">
-        Connect to the right people, opportunities and solutions — instantly.
-      </p>
-
-      {/* LOGIN CARD */}
-      <div className="bg-white w-full max-w-xs rounded-2xl shadow-lg p-6 flex flex-col items-center gap-4">
-        <p className="text-gray-800 font-bold text-lg">
-          Get Started
-        </p>
-        <p className="text-gray-400 text-sm text-center">
-          Sign in with your Google account to continue
-        </p>
-        <button
-          onClick={handleGoogleLogin}
-          className="flex items-center gap-3 bg-[#C9A84C] text-white font-bold px-8 py-4 rounded-full text-base hover:bg-[#b8963e] transition-all duration-300 w-full justify-center shadow-md"
-        >
-          <img
-            src="https://www.google.com/favicon.ico"
-            alt="Google"
-            className="w-5 h-5"
-          />
-          Continue with Google
-        </button>
-      </div>
-
-      {/* BOTTOM */}
-      <p className="text-gray-300 mt-10 text-xs tracking-widest uppercase">
-        Connect · Solve · Rise
-      </p>
-
     </main>
   )
 }
