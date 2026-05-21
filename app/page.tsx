@@ -37,18 +37,6 @@ export default function Home() {
         {/* TOP NAV */}
         <div className="flex items-center justify-between mb-8">
 
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-full bg-[#0B2545] border border-[#C8A45D]/40 shadow-lg flex items-center justify-center">
-              <span className="text-[#F5E6C8] text-2xl">
-                ⚓
-              </span>
-            </div>
-
-            <h2 className="text-[42px] font-bold text-[#0B2545] tracking-tight">
-              Anchor 360
-            </h2>
-          </div>
-
           <button className="px-5 py-2 rounded-full border border-[#D7C4A7] text-[#0B2545] font-medium bg-white/60 backdrop-blur-md">
             Login
           </button>
