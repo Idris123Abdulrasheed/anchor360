@@ -116,21 +116,6 @@ export default function Home() {
 
           </button>
 
-          {/* TRUST TEXT */}
-          <div className="flex items-center justify-center gap-3 mt-8 text-[#6B7280] text-sm">
-
-            <span>🔒 Secure</span>
-
-            <span className="text-[#D4B06A]">•</span>
-
-            <span>Private</span>
-
-            <span className="text-[#D4B06A]">•</span>
-
-            <span>Trusted</span>
-
-          </div>
-
         </div>
 
         {/* BOTTOM FEATURES */}
@@ -144,10 +129,6 @@ export default function Home() {
             <h3 className="text-[#0B2545] font-bold tracking-wide">
               CONNECT
             </h3>
-
-            <p className="text-xs text-[#6B7280] mt-1">
-              Build relationships
-            </p>
           </div>
 
           <div className="text-center">
@@ -158,10 +139,6 @@ export default function Home() {
             <h3 className="text-[#0B2545] font-bold tracking-wide">
               SOLVE
             </h3>
-
-            <p className="text-xs text-[#6B7280] mt-1">
-              Find real solutions
-            </p>
           </div>
 
           <div className="text-center">
@@ -173,17 +150,9 @@ export default function Home() {
               RISE
             </h3>
 
-            <p className="text-xs text-[#6B7280] mt-1">
-              Grow & achieve
-            </p>
           </div>
 
         </div>
-
-        {/* FOOT NOTE */}
-        <p className="text-center text-[#0B2545] tracking-[0.45em] text-xs font-bold mt-10">
-          CONNECT • SOLVE • RISE
-        </p>
 
       </section>
     </main>
