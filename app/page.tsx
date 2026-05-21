@@ -72,9 +72,7 @@ export default function Home() {
           </p>
 
           <p className="text-center text-black text-[18px] leading-snug font-medium mb-7">
-            The best place to instantly connect <br />
-            to the right people, opportunities <br />
-            and solutions.
+            Let's connect with the right people, opportunities and solutions.
           </p>
 
           <div className="h-px w-full bg-[#D6CCC1] mb-6" />
