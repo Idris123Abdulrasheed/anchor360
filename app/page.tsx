@@ -23,56 +23,74 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-[#F5F1EA] flex items-center justify-center px-5 py-8 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-35 bg-[radial-gradient(#d6c6ab_1px,transparent_1px)] bg-[length:28px_28px]" />
+    <main className="min-h-screen relative overflow-hidden bg-[#e8e1d8] flex flex-col">
+      {/* Marble Background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: "url('/marble-bg.png')",
+        }}
+      />
 
-      <div className="absolute -left-32 top-0 w-[450px] h-[450px] rounded-full bg-[#E9DFCF] blur-3xl opacity-25" />
-      <div className="absolute -right-32 bottom-0 w-[450px] h-[450px] rounded-full bg-[#EFE4D3] blur-3xl opacity-35" />
+      {/* Light overlay */}
+      <div className="absolute inset-0 bg-white/10" />
 
-      <section className="relative z-10 w-full max-w-sm">
-        <div className="flex items-center justify-end mb-6">
-          <button className="px-5 py-2 rounded-full border border-[#D7C4A7] text-[#0B2545] font-medium bg-white/70 backdrop-blur-md">
-            Login
-          </button>
-        </div>
+      {/* Top Bar */}
+      <header className="relative z-10 h-14 bg-white/80 backdrop-blur-md flex items-center justify-between px-6 border-b border-white/40">
+        <img
+          src="/anchor-icon.png"
+          alt="Anchor 360"
+          className="w-8 h-8 rounded-full object-cover shadow-sm"
+        />
 
-        <div className="bg-white/90 backdrop-blur-xl rounded-[32px] border border-[#E6D8C3] shadow-[0_18px_50px_rgba(0,0,0,0.08)] px-6 py-8">
-          <div className="mx-auto mb-6 w-24 h-24 rounded-full bg-gradient-to-br from-[#123A5F] to-[#061A2F] border-[4px] border-[#D4B06A] flex items-center justify-center shadow-xl">
-            <span className="text-5xl text-[#F5E6C8] drop-shadow-lg">
-              ⚓
-            </span>
+        <button className="text-[#2A211B] text-base font-semibold">
+          Login
+        </button>
+      </header>
+
+      {/* Main Section */}
+      <section className="relative z-10 flex-1 flex items-center justify-center px-6 py-10">
+        <div className="relative w-full max-w-sm bg-[#F5F0E8]/95 rounded-[14px] shadow-[0_18px_45px_rgba(0,0,0,0.28)] px-7 pt-20 pb-7 border border-white/50">
+          
+          {/* Floating Icon */}
+          <div className="absolute -top-16 left-1/2 -translate-x-1/2">
+            <div className="w-32 h-32 rounded-full bg-[#F5F0E8] p-2 shadow-xl">
+              <img
+                src="/anchor-icon.png"
+                alt="Anchor logo"
+                className="w-full h-full rounded-full object-cover"
+              />
+            </div>
           </div>
 
-          <h1 className="text-center text-[48px] leading-none font-black tracking-tight text-[#071C34]">
+          <h1 className="text-center text-[46px] leading-none font-serif font-bold text-[#3B2417]">
             Anchor 360
           </h1>
 
-          <div className="flex items-center justify-center gap-4 mt-4 mb-5">
-            <div className="w-12 h-[2px] bg-[#D4B06A]" />
-            <div className="w-2 h-2 rotate-45 border border-[#D4B06A]" />
-            <div className="w-12 h-[2px] bg-[#D4B06A]" />
-          </div>
-
-          <p className="text-center text-[#123A5F] font-bold tracking-[0.24em] text-[11px] mb-6">
+          <p className="text-center text-[#6A3B24] font-bold tracking-[0.14em] text-xs mt-3 mb-6">
             THE STUDENT OPERATING SYSTEM
           </p>
 
-          <p className="text-center text-[#4B5563] text-[17px] leading-relaxed mb-8 px-2">
-            Connect with the right people, opportunities, and solutions.
+          <p className="text-center text-black text-[18px] leading-snug font-medium mb-7">
+            The best place to instantly connect <br />
+            to the right people, opportunities <br />
+            and solutions.
           </p>
+
+          <div className="h-px w-full bg-[#D6CCC1] mb-6" />
 
           <button
             onClick={handleGoogleLogin}
             disabled={isLoading}
-            className="w-full rounded-2xl border border-[#E5D7BF] bg-white py-4 px-5 flex items-center justify-center gap-3 text-[#111827] text-lg font-semibold shadow-sm hover:shadow-lg hover:border-[#C8A45D] transition-all duration-200 active:scale-[0.985] disabled:opacity-70"
+            className="w-full h-14 rounded-md bg-white border border-[#BBAA9B] shadow-sm flex items-center justify-center gap-3 text-black text-lg font-semibold hover:shadow-md active:scale-[0.98] transition-all disabled:opacity-70"
           >
             {isLoading ? (
-              <div className="w-5 h-5 rounded-full border-[3px] border-gray-300 border-t-[#0B2545] animate-spin" />
+              <div className="w-5 h-5 rounded-full border-[3px] border-gray-300 border-t-[#3B2417] animate-spin" />
             ) : (
               <img
                 src="https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png"
                 alt="Google"
-                className="w-6 h-6"
+                className="w-7 h-7"
               />
             )}
 
@@ -81,36 +99,18 @@ export default function Home() {
             </span>
           </button>
         </div>
-
-        <div className="grid grid-cols-3 gap-4 mt-7">
-          <div className="text-center">
-            <div className="w-12 h-12 mx-auto rounded-2xl bg-white/80 border border-[#E7D9C6] flex items-center justify-center text-xl shadow-sm mb-2">
-              👥
-            </div>
-            <h3 className="text-[#0B2545] text-sm font-bold tracking-wide">
-              CONNECT
-            </h3>
-          </div>
-
-          <div className="text-center">
-            <div className="w-12 h-12 mx-auto rounded-2xl bg-white/80 border border-[#E7D9C6] flex items-center justify-center text-xl shadow-sm mb-2">
-              🧭
-            </div>
-            <h3 className="text-[#0B2545] text-sm font-bold tracking-wide">
-              SOLVE
-            </h3>
-          </div>
-
-          <div className="text-center">
-            <div className="w-12 h-12 mx-auto rounded-2xl bg-white/80 border border-[#E7D9C6] flex items-center justify-center text-xl shadow-sm mb-2">
-              📈
-            </div>
-            <h3 className="text-[#0B2545] text-sm font-bold tracking-wide">
-              RISE
-            </h3>
-          </div>
-        </div>
       </section>
+
+      {/* Footer */}
+      <footer className="relative z-10 h-14 bg-white/80 backdrop-blur-md flex items-center justify-center border-t border-white/40">
+        <div className="flex items-center gap-2 text-[#2A211B] text-sm font-medium">
+          <span>Terms</span>
+          <span>•</span>
+          <span>Privacy</span>
+          <span>•</span>
+          <span>Contact</span>
+        </div>
+      </footer>
     </main>
   )
 }
