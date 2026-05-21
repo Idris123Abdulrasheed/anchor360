@@ -49,7 +49,7 @@ export default function Home() {
       </header>
 
       {/* Main Section */}
-      <section className="relative z-10 flex items-center justify-center px-6 py-4">
+      <section className="relative z-10 flex-1 flex items-center justify-center px-6 py-6">
         <div className="relative w-full max-w-sm bg-[#F5F0E8]/95 rounded-[14px] shadow-[0_18px_45px_rgba(0,0,0,0.28)] px-7 pt-20 pb-7 border border-white/50">
           
           {/* Floating Icon */}
