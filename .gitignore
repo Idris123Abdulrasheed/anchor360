@@ -1,3 +1,5 @@
+# The reason we have these folder is the fact that we cannot allow all our code to be pushed to github, especially our environment code that is not safe to be pushed. That's where our safety are. So we have to provide provide git.ignore folder to avoid pushing them.
+
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
